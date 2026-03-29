@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-bar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">AJ</span>
+          <span class="brand-copy">
+            <strong>Academic Portfolio</strong>
+            <span>Search Results</span>
+          </span>
+        </a>
+        <div class="header-tools">
+          <nav class="program-nav">
+            <a class="program-link" href="index.html">Main</a>
+            <a class="program-link" href="bsc.html">B.SC.</a>
+            <a class="program-link" href="msc.html">M.SC.</a>
+          </nav>
+          <form class="header-search" action="search.html" method="get">
+            <input id="searchQueryInput" class="search-input" type="search" name="q" placeholder="Search" />
+            <button class="search-button" type="submit" aria-label="Search">🔍</button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <main class="shell page-layout">
+      <section class="detail-hero">
+        <p class="eyebrow">SEARCH</p>
+        <h1 id="searchTitle">Search Results</h1>
+        <p id="searchSummary" class="lead"></p>
+      </section>
+
+      <section class="panel-card">
+        <div id="searchResults" class="search-result-list"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <p id="footerText"></p>
+    </footer>
+
+    <script>
+      const devVersion = Date.now();
+      document.write(`<script src="data/site-data.js?v=${devVersion}"><\/script>`);
+      document.write(`<script src="assets/js/common.js?v=${devVersion}"><\/script>`);
+      document.write(`<script src="assets/js/search.js?v=${devVersion}"><\/script>`);
+    </script>
+  </body>
+</html>

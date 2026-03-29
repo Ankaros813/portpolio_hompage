@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic Portfolio</title>
+    <meta
+      name="description"
+      content="Personal academic portfolio homepage"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="page-home">
+    <header class="site-header">
+      <div class="shell header-bar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">AJ</span>
+          <span class="brand-copy">
+            <strong>Academic Portfolio</strong>
+            <span id="brandSubtitle">Personal Academic Archive</span>
+          </span>
+        </a>
+        <div class="header-tools">
+          <nav class="program-nav">
+            <a class="program-link is-active" href="index.html">Main</a>
+          </nav>
+          <form class="header-search" action="search.html" method="get">
+            <input class="search-input" type="search" name="q" placeholder="Search" />
+            <button class="search-button" type="submit" aria-label="Search">🔍</button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <main class="shell home-layout home-wide-layout">
+      <aside class="home-side-column">
+        <section class="portrait-panel panel-card profile-card">
+          <div class="portrait-frame">
+            <img
+              id="profilePhoto"
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80"
+              alt="Profile Photo"
+            />
+          </div>
+          <p class="portrait-caption">Profile Photo</p>
+        </section>
+
+        <article class="panel-card">
+          <div class="section-head">
+            <p class="eyebrow">LINKS</p>
+            <h2>Related Links</h2>
+          </div>
+          <div id="linkList" class="link-list"></div>
+        </article>
+
+        <article class="panel-card lab-info-card">
+          <div class="section-head">
+            <p class="eyebrow">LAB</p>
+            <h2>Laboratory Information</h2>
+          </div>
+          <div class="lab-info-list">
+            <article class="lab-info-item">
+              <strong>서강대학교 리치과학관 R1416</strong>
+            </article>
+            <article class="lab-info-item">
+              <strong>수리과학 및 데이터사이언스 연구소 (IMDS)</strong>
+            </article>
+            <article class="lab-info-item">
+              <strong>CICAGO lab</strong>
+            </article>
+          </div>
+        </article>
+      </aside>
+
+      <section class="home-main-column">
+        <section class="hero-card hero-card-wide">
+          <div class="hero-copy">
+            <p class="eyebrow">HOME</p>
+            <h1 id="homeName">Academic Portfolio</h1>
+            <p id="homeTagline" class="lead"></p>
+            <p id="homeIntro" class="body-copy"></p>
+            <div class="hero-actions">
+              <a class="btn btn-primary cta-button" href="bsc.html">
+                <span>학사 정보 보기</span>
+                <strong>→</strong>
+              </a>
+              <a class="btn btn-secondary cta-button" href="msc.html">
+                <span>석사 정보 보기</span>
+                <strong>→</strong>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="home-main-grid">
+          <article class="panel-card">
+            <div class="section-head">
+              <p class="eyebrow">ACADEMIC BACKGROUND</p>
+              <h2>Academic Background</h2>
+            </div>
+            <div id="educationList" class="timeline-list"></div>
+          </article>
+
+          <article class="panel-card home-overview-card">
+            <div class="section-head">
+              <p class="eyebrow">OVERVIEW</p>
+              <h2>Overview</h2>
+            </div>
+            <div id="homeMetrics" class="metric-stack"></div>
+          </article>
+
+          <article class="panel-card home-projects-card">
+            <div class="section-head">
+              <p class="eyebrow">PROJECTS</p>
+              <h2>Featured Projects</h2>
+            </div>
+            <div id="featuredProjects" class="feature-list"></div>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <p id="footerText"></p>
+    </footer>
+
+    <script>
+      const devVersion = Date.now();
+      document.write(`<script src="data/site-data.js?v=${devVersion}"><\/script>`);
+      document.write(`<script src="assets/js/common.js?v=${devVersion}"><\/script>`);
+      document.write(`<script src="assets/js/home.js?v=${devVersion}"><\/script>`);
+    </script>
+  </body>
+</html>

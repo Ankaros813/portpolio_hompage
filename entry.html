@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entry Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-bar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">AJ</span>
+          <span class="brand-copy">
+            <strong>Academic Portfolio</strong>
+            <span id="entryProgramLabel">Entry Detail</span>
+          </span>
+        </a>
+        <nav class="program-nav">
+          <a id="navBsc" class="program-link" href="bsc.html">B.SC.</a>
+          <a id="navMsc" class="program-link" href="msc.html">M.SC.</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell page-layout">
+      <section class="detail-hero">
+        <a id="backToProgram" class="breadcrumb-link" href="bsc.html">이전 페이지로</a>
+        <p id="entryCategory" class="eyebrow"></p>
+        <h1 id="entryTitle"></h1>
+        <p id="entrySummary" class="lead"></p>
+      </section>
+
+      <section class="panel-card">
+        <div class="section-head">
+          <p class="eyebrow">CHAPTERS</p>
+          <h2>대주제 및 소주제</h2>
+          <p>각 소주제를 누르면 별도 페이지에서 정리 내용과 PPT 이미지 자료를 볼 수 있습니다.</p>
+        </div>
+        <div id="chapterList" class="chapter-list"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <p id="footerText"></p>
+    </footer>
+
+    <script>
+      const devVersion = Date.now();
+      document.write(`<script src="data/site-data.js?v=${devVersion}"><\/script>`);
+      document.write(`<script src="assets/js/common.js?v=${devVersion}"><\/script>`);
+      document.write(`<script src="assets/js/entry.js?v=${devVersion}"><\/script>`);
+    </script>
+  </body>
+</html>

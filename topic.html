@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Topic Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-bar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">AJ</span>
+          <span class="brand-copy">
+            <strong>Academic Portfolio</strong>
+            <span id="topicProgramLabel">Topic Detail</span>
+          </span>
+        </a>
+        <nav class="program-nav">
+          <a id="topicNavBsc" class="program-link" href="bsc.html">B.SC.</a>
+          <a id="topicNavMsc" class="program-link" href="msc.html">M.SC.</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell page-layout">
+      <section class="detail-hero">
+        <a id="backToEntry" class="breadcrumb-link" href="entry.html">이전 페이지로</a>
+        <p id="topicChapter" class="eyebrow"></p>
+        <h1 id="topicTitle"></h1>
+        <p id="topicSummary" class="lead"></p>
+      </section>
+
+      <section class="panel-grid two-col">
+        <article class="panel-card">
+          <div class="section-head">
+            <p class="eyebrow">CONTENT</p>
+            <h2>내용 정리</h2>
+          </div>
+          <div id="topicNotes" class="note-block"></div>
+        </article>
+
+        <article class="panel-card">
+          <div class="section-head">
+            <p class="eyebrow">ATTACHMENTS</p>
+            <h2>관련 링크 및 파일</h2>
+          </div>
+          <div id="topicAttachments" class="attachment-list"></div>
+        </article>
+      </section>
+
+      <section class="panel-card">
+        <div class="section-head">
+          <p class="eyebrow">PPT & IMAGES</p>
+          <h2>이미지 갤러리</h2>
+          <p>긴 페이지를 피하기 위해 3열 행렬 형태로 자료를 정리합니다.</p>
+        </div>
+        <div id="topicGallery" class="gallery-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <p id="footerText"></p>
+    </footer>
+
+    <script>
+      const devVersion = Date.now();
+      document.write(`<script src="data/site-data.js?v=${devVersion}"><\/script>`);
+      document.write(`<script src="assets/js/common.js?v=${devVersion}"><\/script>`);
+      document.write(`<script src="assets/js/topic.js?v=${devVersion}"><\/script>`);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B.SC. Curriculum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-bar">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">AJ</span>
+          <span class="brand-copy">
+            <strong>Academic Portfolio</strong>
+            <span>Bachelor of Science</span>
+          </span>
+        </a>
+        <div class="header-tools">
+          <nav class="program-nav">
+            <a class="program-link" href="index.html">Main</a>
+            <a class="program-link is-active" href="bsc.html">B.SC.</a>
+            <a class="program-link" href="msc.html">M.SC.</a>
+          </nav>
+          <form class="header-search" action="search.html" method="get">
+            <input class="search-input" type="search" name="q" placeholder="Search" />
+            <button class="search-button" type="submit" aria-label="Search">🔍</button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <main class="shell page-layout">
+      <section class="program-hero">
+        <div class="program-main">
+          <p class="eyebrow">BACHELOR OF SCIENCE</p>
+          <h1 id="programTitle">B.SC.</h1>
+          <p id="programDescription" class="lead"></p>
+          <section class="section-jump-card section-jump-card-compact">
+            <div class="section-head">
+              <p class="eyebrow">QUICK NAVIGATION</p>
+              <h2>Table Shortcuts</h2>
+            </div>
+            <div id="tableJumpNav" class="jump-nav"></div>
+          </section>
+        </div>
+        <div id="programMeta" class="program-meta"></div>
+      </section>
+
+      <section id="tableSections" class="table-section-stack"></section>
+    </main>
+
+    <footer class="site-footer shell">
+      <p id="footerText"></p>
+    </footer>
+
+    <script>
+      const devVersion = Date.now();
+      document.write(`<script src="data/site-data.js?v=${devVersion}"><\/script>`);
+      document.write(`<script src="assets/js/common.js?v=${devVersion}"><\/script>`);
+      document.write(`<script src="assets/js/program.js?v=${devVersion}"><\/script>`);
+    </script>
+  </body>
+</html>
