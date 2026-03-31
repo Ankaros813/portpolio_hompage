@@ -1,0 +1,20 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="faviconBg" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2E8B74"/>
+      <stop offset="1" stop-color="#7ECBB6"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="20" fill="url(#faviconBg)"/>
+  <text
+    x="32"
+    y="37"
+    text-anchor="middle"
+    fill="white"
+    font-family="'Noto Serif KR', 'Times New Roman', serif"
+    font-size="22"
+    font-weight="700"
+  >
+    WSJ
+  </text>
+</svg>

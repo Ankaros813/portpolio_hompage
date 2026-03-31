@@ -6,8 +6,36 @@
     <title>Academic Portfolio</title>
     <meta
       name="description"
-      content="Personal academic portfolio homepage"
+      content="학사와 석사 과정, 프로젝트, 연구, 세미나 활동을 정리한 Woo-Seok Jeong의 개인 학술 포트폴리오입니다."
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="Woo-Seok Jeong" />
+    <meta
+      property="og:description"
+      content="학사와 석사 과정, 프로젝트, 연구, 세미나 활동을 정리한 개인 학술 포트폴리오"
+    />
+    <meta property="og:url" content="https://portpolio-wsj.vercel.app/" />
+    <meta
+      property="og:image"
+      content="https://portpolio-wsj.vercel.app/assets/og/home-share-card.svg"
+    />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Woo-Seok Jeong" />
+    <meta
+      name="twitter:description"
+      content="학사와 석사 과정, 프로젝트, 연구, 세미나 활동을 정리한 개인 학술 포트폴리오"
+    />
+    <meta
+      name="twitter:image"
+      content="https://portpolio-wsj.vercel.app/assets/og/home-share-card.svg"
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+    <link rel="shortcut icon" href="assets/icons/favicon.svg" />
+    <link rel="apple-touch-icon" href="assets/icons/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,7 +48,7 @@
     <header class="site-header">
       <div class="shell header-bar">
         <a class="brand" href="index.html">
-          <span class="brand-mark">AJ</span>
+          <span class="brand-mark">WSJ</span>
           <span class="brand-copy">
             <strong>Academic Portfolio</strong>
             <span id="brandSubtitle">Personal Academic Archive</span>
@@ -51,7 +79,7 @@
           <p class="portrait-caption">Profile Photo</p>
         </section>
 
-        <article class="panel-card">
+        <article class="panel-card related-links-card">
           <div class="section-head">
             <p class="eyebrow">LINKS</p>
             <h2>Related Links</h2>
@@ -83,6 +111,7 @@
           <div class="hero-copy">
             <p class="eyebrow">HOME</p>
             <h1 id="homeName">Academic Portfolio</h1>
+            <div id="mobileProfileSummary" class="mobile-profile-summary" aria-label="Mobile profile summary"></div>
             <p id="homeTagline" class="lead"></p>
             <p id="homeIntro" class="body-copy"></p>
             <div class="hero-actions">
@@ -99,7 +128,7 @@
         </section>
 
         <section class="home-main-grid">
-          <article class="panel-card">
+          <article class="panel-card academic-background-card">
             <div class="section-head">
               <p class="eyebrow">ACADEMIC BACKGROUND</p>
               <h2>Academic Background</h2>

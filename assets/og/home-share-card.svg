@@ -1,0 +1,31 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="42" x2="1080" y2="588" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBFEFD"/>
+      <stop offset="1" stop-color="#EEF7F3"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(180 86) rotate(31.88) scale(379.699 255.701)">
+      <stop stop-color="#A5DCCB" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#A5DCCB" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" rx="36" fill="url(#bg)"/>
+  <rect x="22" y="22" width="1156" height="586" rx="30" stroke="#B8D8CC" stroke-width="2"/>
+  <circle cx="170" cy="92" r="230" fill="url(#glow)"/>
+  <text x="72" y="86" fill="#2E8B74" font-family="'IBM Plex Sans KR', 'Noto Sans KR', sans-serif" font-size="26" font-weight="700" letter-spacing="8">HOME</text>
+  <text x="72" y="220" fill="#173C38" font-family="'Noto Serif KR', 'Times New Roman', serif" font-size="84" font-weight="700">Woo-Seok Jeong</text>
+  <text x="72" y="292" fill="#4A6963" font-family="'IBM Plex Sans KR', 'Noto Sans KR', sans-serif" font-size="30" font-weight="500">
+    I'm interested in Data Analytics about Mathematics, NLP with LLM and statics
+  </text>
+  <text x="72" y="386" fill="#4A6963" font-family="'IBM Plex Sans KR', 'Noto Sans KR', sans-serif" font-size="27" font-weight="500">
+    B.Sc. / M.Sc. course archive, projects, research and seminar portfolio
+  </text>
+  <g>
+    <rect x="72" y="456" width="248" height="72" rx="36" fill="#FFFFFF" stroke="#B8D8CC" stroke-width="2"/>
+    <text x="106" y="501" fill="#2E8B74" font-family="'IBM Plex Sans KR', 'Noto Sans KR', sans-serif" font-size="28" font-weight="700">Bachelor Archive</text>
+  </g>
+  <g>
+    <rect x="338" y="456" width="232" height="72" rx="36" fill="#2E8B74"/>
+    <text x="379" y="501" fill="#FFFFFF" font-family="'IBM Plex Sans KR', 'Noto Sans KR', sans-serif" font-size="28" font-weight="700">Master Archive</text>
+  </g>
+</svg>

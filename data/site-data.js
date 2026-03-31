@@ -8,7 +8,7 @@ window.SITE_DATA = {
     intro:
       "학사와 석사 과정 전반의 과목, 과제, 프로젝트, 연구, 세미나 활동을 정리하고 관련 자료를 단계별로 보관하는 수학 · 데이터 · 연구 기반 개인 학술 포트폴리오입니다.",
     photo:
-      "uploads/Photo_wsj.jpg",
+      "uploads/Photo_wsj.png",
     footer: "Made by Woo-seok Jeong using static method",
     links: [
       { label: "GitHub", value: "https://github.com/ankaros813" },

@@ -12,12 +12,96 @@
   const linkList = document.getElementById("linkList");
   const projectList = document.getElementById("featuredProjects");
   const homeMetrics = document.getElementById("homeMetrics");
+  const mobileProfileSummary = document.getElementById("mobileProfileSummary");
+  const homeSideColumn = document.querySelector(".home-side-column");
+  const homeMainGrid = document.querySelector(".home-main-grid");
+  const relatedLinksCard = document.querySelector(".related-links-card");
+  const labInfoCard = document.querySelector(".lab-info-card");
+  const academicBackgroundCard = document.querySelector(".academic-background-card");
+  const homeOverviewCard = document.querySelector(".home-overview-card");
 
   name.textContent = data.site.owner;
   tagline.textContent = data.site.tagline;
   intro.textContent = data.site.intro;
   photo.src = data.site.photo;
   brandSubtitle.textContent = data.site.subtitle;
+
+  if (mobileProfileSummary) {
+    const contactRows = data.site.links
+      .map((item) => {
+        const label = item.label || "";
+        const value = item.value || "";
+
+        if (label.toLowerCase().includes("email")) {
+          const [emailValue, phoneValue] = value.split("|").map((entry) => entry.trim());
+          const emailLink = emailValue
+            ? `<a class="mobile-contact-link" href="mailto:${emailValue}">${emailValue}</a>`
+            : "";
+          const phoneLink = phoneValue
+            ? `<a class="mobile-contact-link" href="tel:${phoneValue.replace(/\s+/g, "")}">${phoneValue}</a>`
+            : "";
+          const combinedLinks = [emailLink, phoneLink].filter(Boolean).join(
+            '<span class="mobile-contact-separator"> | </span>'
+          );
+
+          return `
+            <div class="mobile-contact-row">
+              <span class="mobile-contact-label">${label}</span>
+              <div class="mobile-contact-values">
+                ${combinedLinks}
+              </div>
+            </div>
+          `;
+        }
+
+        return `
+          <div class="mobile-contact-row">
+            <span class="mobile-contact-label">${label}</span>
+            <div class="mobile-contact-values">
+              <a class="mobile-contact-link" href="${value}" target="_blank" rel="noreferrer">${value}</a>
+            </div>
+          </div>
+        `;
+      })
+      .join("");
+
+    mobileProfileSummary.innerHTML = `
+      <div class="mobile-profile-card">
+        <div class="mobile-profile-photo-wrap">
+          <img class="mobile-profile-photo" src="${data.site.photo}" alt="Profile Photo" />
+        </div>
+        <div class="mobile-profile-copy">
+          <p class="mobile-profile-period">${data.site.subtitle}</p>
+          <div class="mobile-contact-list">${contactRows}</div>
+        </div>
+      </div>
+    `;
+  }
+
+  function syncMobileLayout() {
+    if (!labInfoCard || !homeSideColumn || !homeMainGrid || !homeOverviewCard) {
+      return;
+    }
+
+    const isMobile = window.matchMedia("(max-width: 760px)").matches;
+
+    if (isMobile) {
+      homeMainGrid.insertBefore(labInfoCard, homeOverviewCard);
+      return;
+    }
+
+    if (relatedLinksCard && relatedLinksCard.parentElement === homeSideColumn) {
+      homeSideColumn.insertBefore(labInfoCard, relatedLinksCard.nextElementSibling);
+      return;
+    }
+
+    if (academicBackgroundCard && academicBackgroundCard.parentElement === homeMainGrid) {
+      homeSideColumn.appendChild(labInfoCard);
+    }
+  }
+
+  syncMobileLayout();
+  window.addEventListener("resize", syncMobileLayout);
 
   educationList.innerHTML = data.home.education
     .map(
