@@ -20,6 +20,25 @@
     }
   }
 
+  function preventIosInputZoom() {
+    const ua = window.navigator.userAgent || "";
+    const isAppleMobile = /iPhone|iPad|iPod/i.test(ua);
+
+    if (!isAppleMobile) {
+      return;
+    }
+
+    const viewport = document.querySelector('meta[name="viewport"]');
+    if (!viewport) {
+      return;
+    }
+
+    const content = viewport.getAttribute("content") || "";
+    if (!content.includes("maximum-scale=1")) {
+      viewport.setAttribute("content", `${content}, maximum-scale=1, viewport-fit=cover`);
+    }
+  }
+
   function loadChatbot() {
     const chatbot = data.site.chatbot;
 
@@ -212,5 +231,6 @@
     setNavState
   };
 
+  preventIosInputZoom();
   loadChatbot();
 })();
