@@ -29,6 +29,7 @@ body {
   color: var(--text);
   font-family: "IBM Plex Sans KR", sans-serif;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -37,6 +38,17 @@ body {
 
 a {
   color: inherit;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+button,
+input,
+textarea,
+select,
+iframe {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .shell {
