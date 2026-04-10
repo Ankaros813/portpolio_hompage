@@ -20,6 +20,31 @@
     }
   }
 
+  function loadChatbot() {
+    const chatbot = data.site.chatbot;
+
+    if (!chatbot || !chatbot.enabled || !chatbot.scriptSrc || !chatbot.apiKey) {
+      return;
+    }
+
+    const allowedHosts = chatbot.allowedHosts || [];
+    if (allowedHosts.length > 0 && !allowedHosts.includes(window.location.hostname)) {
+      return;
+    }
+
+    if (document.querySelector('script[data-chatbot-loader="deepfountain"]')) {
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = chatbot.scriptSrc;
+    script.setAttribute("data-api-key", chatbot.apiKey);
+    script.setAttribute("data-chatbot-loader", "deepfountain");
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+
   function setNavState(programKey) {
     const bsc = document.getElementById("navBsc") || document.getElementById("topicNavBsc");
     const msc = document.getElementById("navMsc") || document.getElementById("topicNavMsc");
@@ -186,4 +211,6 @@
     setFooter,
     setNavState
   };
+
+  loadChatbot();
 })();

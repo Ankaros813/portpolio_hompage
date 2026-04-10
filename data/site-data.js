@@ -15,6 +15,17 @@ window.SITE_DATA = {
       { label: "Linkedin", value: "https://www.linkedin.com/in/%EC%9A%B0%EC%84%9D-%EC%A0%95-4b140b392/" },
       { label: "Email | Phone number", value: "wsj0813@sogang.ac.kr | +82-10-8476-4546" },
     ],
+    chatbot: {
+      enabled: true,
+      allowedHosts: [
+        "portpolio-wsj.duckdns.org",
+        "localhost",
+        "127.0.0.1"
+      ],
+      scriptSrc:
+        "https://saas.deep-fountain.com/widget-v3/chatbot-20260409-8b1967/loader.js?api_key=cb_090b6f9c4f230d26fffaa8df32dca5e4",
+      apiKey: "cb_090b6f9c4f230d26fffaa8df32dca5e4"
+    }
   },
   home: {
     education: [
