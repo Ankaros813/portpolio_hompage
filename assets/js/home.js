@@ -83,7 +83,8 @@
       return;
     }
 
-    const isMobile = window.matchMedia("(max-width: 760px)").matches;
+    const isMobile =
+      window.matchMedia("(max-width: 760px)").matches && !document.body.classList.contains("force-desktop");
 
     if (isMobile) {
       homeMainGrid.insertBefore(labInfoCard, homeOverviewCard);
@@ -102,6 +103,7 @@
 
   syncMobileLayout();
   window.addEventListener("resize", syncMobileLayout);
+  window.addEventListener("site:layout-mode-change", syncMobileLayout);
 
   educationList.innerHTML = data.home.education
     .map(

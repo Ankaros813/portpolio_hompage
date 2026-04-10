@@ -1,5 +1,7 @@
 (function () {
   const data = window.SITE_DATA;
+  const DESKTOP_MODE_KEY = "site-desktop-mode";
+  let desktopModeEnabled = false;
 
   function getProgramKeyFromPath() {
     const path = window.location.pathname;
@@ -18,6 +20,75 @@
     if (footer) {
       footer.textContent = data.site.footer;
     }
+  }
+
+  function isDesktopModeEnabled() {
+    return desktopModeEnabled;
+  }
+
+  function readDesktopModeState() {
+    try {
+      return window.sessionStorage.getItem(DESKTOP_MODE_KEY) === "true";
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function writeDesktopModeState(value) {
+    try {
+      window.sessionStorage.setItem(DESKTOP_MODE_KEY, String(value));
+    } catch (error) {
+      // Ignore storage failures and keep the in-memory state for this page.
+    }
+  }
+
+  function applyDesktopModeState() {
+    document.body.classList.toggle("force-desktop", desktopModeEnabled);
+  }
+
+  function notifyLayoutModeChange() {
+    window.dispatchEvent(
+      new CustomEvent("site:layout-mode-change", {
+        detail: {
+          desktopMode: isDesktopModeEnabled()
+        }
+      })
+    );
+  }
+
+  function createDesktopModeToggle() {
+    if (!document.body || document.querySelector('[data-role="desktop-mode-toggle"]')) {
+      return;
+    }
+
+    const footer = document.querySelector(".site-footer");
+    if (!footer) {
+      return;
+    }
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "shell mobile-desktop-toggle-wrap";
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "mobile-desktop-toggle";
+    button.setAttribute("data-role", "desktop-mode-toggle");
+
+    function syncLabel() {
+      button.textContent = isDesktopModeEnabled() ? "모바일 버전" : "PC 버전";
+    }
+
+    button.addEventListener("click", () => {
+      desktopModeEnabled = !desktopModeEnabled;
+      writeDesktopModeState(desktopModeEnabled);
+      applyDesktopModeState();
+      syncLabel();
+      notifyLayoutModeChange();
+    });
+
+    syncLabel();
+    wrapper.appendChild(button);
+    footer.parentNode.insertBefore(wrapper, footer);
   }
 
   function preventIosInputZoom() {
@@ -228,9 +299,13 @@
     buildTopicLink,
     buildSearchResults,
     setFooter,
-    setNavState
+    setNavState,
+    isDesktopModeEnabled
   };
 
+  desktopModeEnabled = readDesktopModeState();
+  applyDesktopModeState();
+  createDesktopModeToggle();
   preventIosInputZoom();
   loadChatbot();
 })();
